@@ -50,7 +50,7 @@ echo 'Compiling the SingularityCE source code'
 	        sudo make -C builddir install
 echo 'Installation Finished'
 # Switches to home directory
-cd ~
+cd ..
 # Removes any tar files
 rm singularity-*.gz
 # Runs the definition file
