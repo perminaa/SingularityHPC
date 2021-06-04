@@ -1,15 +1,15 @@
 #!/bin/bash
 
 # Removes any old singularity and go files
-rm -rf /usr/local/libexec/singularity
-rm -rf /usr/local/etc/singularity
-rm -rf /usr/local/include/singularity
-rm -rf /usr/local/lib/singularity
-rm -rf /usr/local/var/lib/singularity/
-rm -f /usr/local/bin/singularity
-rm -f /usr/local/bin/run-singularity
-rm -f /usr/local/etc/bash_completion.d/singularity
-rm -rf /usr/local/go
+sudo rm -rf /usr/local/libexec/singularity
+sudo rm -rf /usr/local/etc/singularity
+sudo rm -rf /usr/local/include/singularity
+sudo rm -rf /usr/local/lib/singularity
+sudo rm -rf /usr/local/var/lib/singularity/
+sudo rm -f /usr/local/bin/singularity
+sudo rm -f /usr/local/bin/run-singularity
+sudo rm -f /usr/local/etc/bash_completion.d/singularity
+sudo rm -rf /usr/local/go
 rm -rf singularity*
 rm -rf go
 rm *.sif
@@ -44,7 +44,6 @@ rm singularity-${VERSION}}.tar.gz
 cd singularity
 
 echo 'Compiling the SingularityCE source code'
-
 # Compiles SingularityCE
 ./mconfig
 make -C builddir
@@ -55,5 +54,5 @@ echo 'Installation Finished'
 cd ..
 
 # Runs the definition file
-singularity build vmdContainer.sif Singularity
+sudo singularity build -F vmdContainer.sif Singularity
 singularity shell vmdContainer.sif
