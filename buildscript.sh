@@ -26,8 +26,13 @@ wget https://dl.google.com/go/go$VERSION.$OS-$ARCH.tar.gz
 sudo tar -C /usr/local -xzvf go$VERSION.$OS-$ARCH.tar.gz
 rm go$VERSION.$OS-$ARCH.tar.gz
 
-echo 'export PATH=/usr/local/go/bin:$PATH' >>~/.bashrc
-source ~/.bashrc
+export PATH="$PATH:/usr/local/go/bin"
+
+if grep 'export PATH="$PATH:/usr/local/go/bin"' ~/.bashrc &>/dev/null; then
+    echo 'go is already in the bashrc file'
+else
+    echo 'export PATH="$PATH:/usr/local/go/bin"' >>~/.bashrc
+fi
 
 echo 'Installing SingularityCE'
 
