@@ -2,17 +2,13 @@
 
 # Removes any old singularity and go files
 sudo rm -rf /usr/local/libexec/singularity
+sudo rm -rf /usr/local/var/singularity
 sudo rm -rf /usr/local/etc/singularity
-sudo rm -rf /usr/local/include/singularity
-sudo rm -rf /usr/local/lib/singularity
-sudo rm -rf /usr/local/var/lib/singularity/
 sudo rm -f /usr/local/bin/singularity
 sudo rm -f /usr/local/bin/run-singularity
 sudo rm -f /usr/local/etc/bash_completion.d/singularity
 sudo rm -rf /usr/local/go
-rm -rf singularity*
-rm -rf go
-rm *.sif
+
 echo 'Removing/Cleaning Up Previous Versions Complete'
 echo 'Installing Required Packages'
 
