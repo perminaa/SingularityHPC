@@ -49,5 +49,4 @@ From: debian:buster
     rm -rf vmd-1.9.3
 
     # Remove all the packages we won't need anymore to try and keep the container size down
-    # This brings the container size from 1.7GB to 
     apt purge -y xz-utils wget gcc g++ gfortran make
