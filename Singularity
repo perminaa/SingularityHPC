@@ -7,8 +7,20 @@ From: debian:buster
 
 %post
     apt update
-    apt install -y wget make
+    apt install -y xz-utils wget gcc g++ gfortran build-essential make openssh-client
 
+    # Download and install charmm
+    cd /opt/
+    wget -O /opt/charmm.tar.gz https://raw.githubusercontent.com/perminaa/SingularityHPC/main/charmm.tar.gz
+    tar xvzf charmm.tar.gz
+    cd /opt/charmm
+    ./configure
+    cd build/cmake
+    make -j16
+    make install
+    cd /opt
+    rm charmm.tar.gz
+    
     #Download and install R
     apt install -y r-base
 
@@ -35,3 +47,7 @@ From: debian:buster
     make install
     cd ../../
     rm -rf vmd-1.9.3
+
+    # Remove all the packages we won't need anymore to try and keep the container size down
+    # This brings the container size from 1.7GB to 
+    apt purge -y xz-utils wget gcc g++ gfortran make
