@@ -48,5 +48,10 @@ From: debian:buster
     cd ../../
     rm -rf vmd-1.9.3
 
+    # Download and install propka
+    apt install -y python3 python3-pip
+    pip3 install propka
+    apt purge -y python3-pip
+
     # Remove all the packages we won't need anymore to try and keep the container size down
     apt purge -y xz-utils wget gcc g++ gfortran make
