@@ -4,4 +4,4 @@ This repository will hold: the build script to install singularity and other dep
 To install, run `git clone https://github.com/perminaa/SingularityHPC.git && cd SingularityHPC && bash buildscript.sh`. This will install and configure singularity
 and build a container called `container.sif`
 
-To run the container, you can use `singularity shell container.sif` to run in the singularity shell or `singularity exec container.sif <command>`.
+To run the container, you can use `singularity shell Container.sif` to run in the singularity shell or `singularity exec Container.sif <command>`.
