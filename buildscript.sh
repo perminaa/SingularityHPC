@@ -55,5 +55,5 @@ echo 'Installation Finished'
 cd ..
 
 # Runs the definition file
-sudo singularity build -F vmdContainer.sif Singularity
-singularity shell vmdContainer.sif
+sudo singularity build -F Container.sif Singularity
+singularity shell Container.sif
