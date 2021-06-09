@@ -53,5 +53,15 @@ From: debian:buster
     pip3 install propka
     apt purge -y python3-pip
 
+    # Download and install GNU Parallel
+    cd /opt/
+    wget http://ftp.gnu.org/gnu/parallel/parallel-latest.tar.bz2
+    tar xvjf parallel-latest.tar.bz2
+    cd parallel*
+    ./configure && make
+    make install
+    cd /opt
+    rm parallel-latest.tar.bz2
+
     # Remove all the packages we won't need anymore to try and keep the container size down
     apt purge -y xz-utils wget gcc g++ gfortran make
