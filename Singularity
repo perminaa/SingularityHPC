@@ -63,5 +63,11 @@ From: debian:buster
     cd /opt
     rm parallel-latest.tar.bz2
 
+    # Download and prepare IUPred2 redox
+    cd /opt/
+    wget https://raw.githubusercontent.com/perminaa/SingularityHPC/main/iupred2_redox.tar.gz
+    tar xvzf iupred2_redox.tar.gz
+    rm iupred2_redox.tar.gz
+
     # Remove all the packages we won't need anymore to try and keep the container size down
     apt purge -y xz-utils wget gcc g++ gfortran make
