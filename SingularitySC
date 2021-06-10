@@ -1,5 +1,5 @@
 bootstrap: docker
-From: debian:buster
+From: nvidia/cudagl:10.1-devel-ubuntu18.04
 
 %environment
     PATH="/opt/charmm/bin:/opt/namd:/opt/vmd/bin:$PATH"
