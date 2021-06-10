@@ -35,7 +35,7 @@ From: debian:buster
 
     # Download and install vmd
     mkdir -p /opt/vmd
-    wget -O /opt/vmd/vmd.tar.gz https://www.ks.uiuc.edu/Research/vmd/vmd-1.9.3/files/final/vmd-1.9.3.bin.LINUXAMD64.text.tar.gz
+    wget -O /opt/vmd/vmd.tar.gz https://www.ks.uiuc.edu/Research/vmd/vmd-1.9.3/files/final/vmd-1.9.3.bin.LINUXAMD64-CUDA8-OptiX4-OSPRay111p1.opengl.tar.gz
     cd /opt/vmd
     tar xvzf vmd.tar.gz
     cd vmd-1.9.3
