@@ -22,7 +22,7 @@ From: nvidia/cudagl:10.1-devel-ubuntu18.04
     rm charmm.tar.gz
     
     #Download and install R
-    apt install -y r-base
+    #apt install -y r-base Need to test TZ variable
 
     # Download and install namd
     mkdir -p /opt/namd
@@ -34,6 +34,7 @@ From: nvidia/cudagl:10.1-devel-ubuntu18.04
     rmdir NAMD_2.14_Linux-x86_64-multicore
 
     # Download and install vmd
+    apt install -y libxi6 libxinerama1
     mkdir -p /opt/vmd
     wget -O /opt/vmd/vmd.tar.gz https://www.ks.uiuc.edu/Research/vmd/vmd-1.9.3/files/final/vmd-1.9.3.bin.LINUXAMD64-CUDA8-OptiX4-OSPRay111p1.opengl.tar.gz
     cd /opt/vmd
