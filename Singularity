@@ -33,6 +33,16 @@ From: debian:buster
     mv NAMD_2.14_Linux-x86_64-multicore/* ./
     rmdir NAMD_2.14_Linux-x86_64-multicore
 
+    # Download and install namd_gpu
+    mkdir -p /opt/namd_gpu
+    wget -O /opt/namd_gpu/namd_gpu.tar.gz https://www.ks.uiuc.edu/Research/namd/cvs/download/741376/NAMD_Git-2021-06-08_Linux-x86_64-multicore-CUDA.tar.gz
+    cd /opt/namd_gpu
+    tar xvzf namd_gpu.tar.gz
+    rm namd_gpu.tar.gz
+    mv NAMD_Git-2021-06-08_Linux-x86_64-multicore-CUDA/* ./
+    rmdir NAMD_Git-2021-06-08_Linux-x86_64-multicore-CUDA
+    mv namd2 namd2_gpu
+
     # Download and install vmd
     mkdir -p /opt/vmd
     wget -O /opt/vmd/vmd.tar.gz https://www.ks.uiuc.edu/Research/vmd/vmd-1.9.3/files/final/vmd-1.9.3.bin.LINUXAMD64-CUDA8-OptiX4-OSPRay111p1.opengl.tar.gz
