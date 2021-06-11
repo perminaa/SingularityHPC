@@ -2,7 +2,7 @@ bootstrap: docker
 From: debian:buster
 
 %environment
-    PATH="/opt/charmm/bin:/opt/namd:/opt/vmd/bin:$PATH"
+    PATH="/opt/namd_gpu:/opt/charmm/bin:/opt/namd:/opt/vmd/bin:$PATH"
     LD_LIBRARY_PATH="/opt/vmd/lib"
 
 %post
