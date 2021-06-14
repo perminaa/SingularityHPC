@@ -83,5 +83,11 @@ From: nvidia/cudagl:10.1-devel-ubuntu18.04
     tar xvzf iupred2_redox.tar.gz
     rm iupred2_redox.tar.gz
 
+    # Download and prepare I-TASSER
+    cd /opt/
+    wget https://raw.githubusercontent.com/perminaa/SingularityHPC/main/I-TASSER5.1.tar.bz2
+    tar -xvf I-TASSER5.1.tar.bz2
+    rm I-TASSER5.1.tar.bz2
+
     # Remove all the packages we won't need anymore to try and keep the container size down
     apt purge -y xz-utils wget gcc g++ gfortran make
