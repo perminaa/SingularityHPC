@@ -2,12 +2,12 @@ bootstrap: docker
 From: debian:buster
 
 %environment
-    PATH="/opt/autodock_vina/bin:/opt/namd_gpu:/opt/charmm/bin:/opt/namd:/opt/vmd/bin:$PATH"
+    PATH="/opt/NCBI-Blast/bin:/opt/I-TASSER5.1/I-TASSERmod/:/opt/medusa/bin:/opt/autodock_vina/bin:/opt/namd_gpu:/opt/charmm/bin:/opt/namd:/opt/vmd/bin:$PATH"
     LD_LIBRARY_PATH="/opt/vmd/lib"
 
 %post
     apt update
-    apt install -y xz-utils wget gcc g++ gfortran build-essential make openssh-client
+    apt install -y xz-utils wget gcc g++ gfortran build-essential make openssh-client git
 
     # Download and install charmm
     cd /opt/
