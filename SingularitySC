@@ -2,12 +2,12 @@ bootstrap: docker
 From: nvidia/cudagl:10.1-devel-ubuntu18.04
 
 %environment
-    PATH="/opt/autodock_vina/bin:/opt/namd_gpu:/opt/charmm/bin:/opt/namd:/opt/vmd/bin:$PATH"
+    PATH="/opt/NCBI-Blast/bin:/opt/I-TASSER5.1/I-TASSERmod/:/opt/medusa/bin:/opt/autodock_vina/bin:/opt/namd_gpu:/opt/charmm/bin:/opt/namd:/opt/vmd/bin:$PATH"
     LD_LIBRARY_PATH="/opt/vmd/lib"
 
 %post
     apt update
-    apt install -y xz-utils wget gcc g++ gfortran build-essential make openssh-client
+    apt install -y xz-utils wget gcc g++ gfortran build-essential make openssh-client git
 
     # Download and install charmm
     cd /opt/
@@ -99,4 +99,4 @@ From: nvidia/cudagl:10.1-devel-ubuntu18.04
     rmdir autodock_vina_1_1_2_linux_x86
 
     # Remove all the packages we won't need anymore to try and keep the container size down
-    apt purge -y xz-utils wget gcc g++ gfortran make
+    apt purge -y xz-utils wget gcc g++ gfortran make git
