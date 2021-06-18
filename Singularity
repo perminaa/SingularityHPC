@@ -97,5 +97,18 @@ From: debian:buster
     mv autodock_vina_1_1_2_linux_x86/* ./
     rmdir autodock_vina_1_1_2_linux_x86
 
+    # Install Medusa
+    cd /opt/
+    git clone https://github.com/DSIMB/medusa.git
+
+    # Download and install NCBI-Blast
+    mkdir -p /opt/NCBI-Blast
+    wget -O /opt/NCBI-Blast/ncbi-blast.tar.gz https://ftp.ncbi.nlm.nih.gov/blast/executables/blast+/LATEST/ncbi-blast-2.11.0+-x64-linux.tar.gz
+    cd /opt/NCBI-Blast
+    tar xzvf ncbi-blast.tar.gz
+    rm ncbi-blast.tar.gz
+    mv ncbi-blast-2.11.0+/* ./
+    rmdir ncbi-blast-2.11.0+
+
     # Remove all the packages we won't need anymore to try and keep the container size down
-    apt purge -y xz-utils wget gcc g++ gfortran make
+    apt purge -y xz-utils wget gcc g++ gfortran make git
