@@ -2,7 +2,7 @@ bootstrap: docker
 From: nvidia/cudagl:10.1-devel-ubuntu18.04
 
 %environment
-    PATH="/opt/parallel-20210622/src:/opt/NCBI-Blast/bin:/opt/I-TASSER5.1/I-TASSERmod/:/opt/medusa/bin:/opt/autodock_vina/bin:/opt/namd_gpu:/opt/charmm/bin:/opt/namd:/opt/vmd/bin:$PATH"
+    PATH="/opt/java/bin:/opt/parallel-20210622/src:/opt/NCBI-Blast/bin:/opt/I-TASSER5.1/I-TASSERmod/:/opt/medusa/bin:/opt/autodock_vina/bin:/opt/namd_gpu:/opt/charmm/bin:/opt/namd:/opt/vmd/bin:$PATH"
     LD_LIBRARY_PATH="/opt/vmd/lib"
 
 %post
@@ -110,6 +110,15 @@ From: nvidia/cudagl:10.1-devel-ubuntu18.04
     rm ncbi-blast.tar.gz
     mv ncbi-blast-2.11.0+/* ./
     rmdir ncbi-blast-2.11.0+
+    
+    # Download Java
+    mkdir -p /opt/java
+    wget -O /opt/java/java.tar.gz https://javadl.oracle.com/webapps/download/AutoDL?BundleId=244575_d7fc238d0cbf4b0dac67be84580cfb4b
+    cd /opt/java
+    tar zxvf java.tar.gz
+    rm java.tar.gz
+    mv jre1.8.0_291/* ./
+    rmdir jre1.8.0_291
 
     # Remove all the packages we won't need anymore to try and keep the container size down
     apt purge -y xz-utils wget gcc g++ gfortran make git
