@@ -117,4 +117,4 @@ From: nvidia/cudagl:10.1-devel-ubuntu18.04
     rmdir jre1.8.0_291
 
     # Remove all the packages we won't need anymore to try and keep the container size down
-    apt purge -y xz-utils wget gcc g++ gfortran make git
+    apt purge -y xz-utils gcc g++ make git
