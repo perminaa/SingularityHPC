@@ -2,7 +2,10 @@ bootstrap: docker
 From: nvidia/cudagl:10.1-devel-ubuntu18.04
 
 %post
+    # Update repository locations
     apt update
-    apt install -y rsync aria2 git
+    # Install tools
+    apt install -y rsync aria2 git python3 python3-pip
+    # Install AlphaFold V2
     cd /opt/
     git clone https://github.com/deepmind/alphafold.git
