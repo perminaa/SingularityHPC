@@ -9,3 +9,4 @@ From: nvidia/cudagl:10.1-devel-ubuntu18.04
     # Install AlphaFold V2
     cd /opt/
     git clone https://github.com/deepmind/alphafold.git
+    pip3 install -r requirements.txt
