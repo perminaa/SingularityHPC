@@ -4,4 +4,5 @@ From: nvidia/cudagl:10.1-devel-ubuntu18.04
 %post
     apt update
     apt install -y rsync aria2 git
+    cd /opt/
     git clone https://github.com/deepmind/alphafold.git
